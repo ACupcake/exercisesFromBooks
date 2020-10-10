@@ -1,3 +1,4 @@
+/**Delete all chars in s1 from s2**/
 void squeeze(char s1[], char s2[]) {
 	int i, j, k;
 	for (i = 0; s1[i] != '\0'; i++) {
