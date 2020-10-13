@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ ** Returns x with the n bits that begin at position p inverted
+ ** (1 to 0 and 0 to 1), leaving the others unchanged.
+**/
 unsigned invert(unsigned x, int p, int n) {
     unsigned mask;
     
