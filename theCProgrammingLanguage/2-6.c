@@ -6,7 +6,7 @@ unsigned setbits(unsigned x, int p, int n, int y) {
     ++y;
     
     //get value to move
-    mask = (x >> (p+1-n)) & ~(~0 << n);
+    mask = (x >> (p+1-n)) //& ~(~0 << n);
     
     //move mask to y+n and does the & operation
     //places one to the right most bits
