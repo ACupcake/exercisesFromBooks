@@ -10,14 +10,14 @@ unsigned setbits(unsigned x, int p, int n, int y) {
     
     //move mask to y+n and does the & operation
     //places one to the right most bits
-    mask = ~(~mask << y-n);
+    mask = ~(~mask << y);
     x = x & mask;
     
     //move mask to beginning
     //move mask to y+n and does the | operation
     //places zero to the right most bits
-    mask = (mask >> y-n);
-    mask = (mask << y-n);
+    mask = (mask >> y);
+    mask = (mask << y);
     x = x | mask;
     return x;
 }
