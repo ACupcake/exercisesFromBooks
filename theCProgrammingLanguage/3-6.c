@@ -8,7 +8,10 @@ void reverse(char s[])
         c=s[i],s[i]=s[j],s[j]=c;
 }
 
-/* itob:  convert n in decimal to characters in base b in s*/
+/*
+	itoa:  convert n  to characters and add extra space
+	if the number of digits in n is less than minimumSize.
+*/
 void itob(int n, char s, int minimumSize) {
 	int i = 0;
 	int sign = 1;
