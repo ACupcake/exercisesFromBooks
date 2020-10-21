@@ -8,7 +8,10 @@ void reverse(char s[])
         c=s[i],s[i]=s[j],s[j]=c;
 }
 
-/* itob:  convert n in decimal to characters in base b in s*/
+/*
+	itob:  convert n in decimal to base b
+	and put it in the string s
+*/
 void itob(int n, char s[], int b) {
 	int i = 0;
 	int sign = 1;
