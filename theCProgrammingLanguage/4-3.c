@@ -10,6 +10,10 @@ double pop(void);
 
 /* reverse polish calculator */
 
+double modulo(double number) {
+    return (number < 0 ? -1*number : number);
+}
+
 int main(void)
 {
     int type;
@@ -42,13 +46,8 @@ int main(void)
                         break;
                 case '%'
                     op2 = pop();
-                    int op = pop();
-
-                    op2 = (op2 < 0)?-1:1;
-                    op = (op < 0)?-1:1;
-
                     if(op2 != 0.0){
-                        push(op % ops);
+                        push(modulo(pop()%op2));
                     }
                     else
                         printf("error:zero divisor\n");
