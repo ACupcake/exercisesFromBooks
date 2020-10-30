@@ -29,7 +29,8 @@ int main(void)
                     push(exp(pop()));
                     break;
                 case 'p': /* pow */
-                    push(pow(pop()));
+                    op2 = pop();
+                    push(pow(pop(), op2));
                     break;
                 case NUMBER:
                         push(atof(s));
