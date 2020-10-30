@@ -20,6 +20,7 @@ double modulo(double number, double divisor) {
 }
 
 /* reverse polish calculator */
+/* modified to add the modulus*/
 int main(void)
 {
     int type;
