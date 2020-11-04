@@ -1,19 +1,11 @@
 #include <stdio.h>
-#include <string.h>
-
-/* reverse: reverse string s in place */
-void reverse(char s[]) {
-	int c, i, j;
-	for (i = 0, j = strlen(s)-1; i < j; i++, j--) {
-		c = s[i];
-		s[i] = s[j];
-		s[j] = c;
-	}
-}
-
-
 /* itoa: convert n to characters in s */
-/* modified to work with recursion */
+/*
+	Modified to work with recursion, it goes to
+	the last digit (on left) of n and then start
+	to put them in s. Since i is static, it does
+	not lose the old value when the function return.
+*/
 void itoa(int n, char s[])
 {
 	int sign;
@@ -21,19 +13,13 @@ void itoa(int n, char s[])
 	
 	if(n == 0)
 		return;
-	if ((sign = n) < 0) /* record sign */
-		n = -n;			/* make n positive */
-
+	
 	itoa(n / 10, s);
-	s[i++] = n % 10 + '0';
+	if(n/10 == 0 && n < 0)
+	    s[i++] = '-';
+	    
+	if(n < 0)
+	    n *= -1;
+	s[i++] = n % 10 + '0'; /* go to the next value */
 	s[i] = '\0';
-}
-
-int main()
-{
-    char s[50];
-    itoa(123, s);
-    printf("%s", s);
-
-    return 0;
 }
