@@ -1,4 +1,4 @@
-# Exercises from some books i've read
+# Exercises from some books I read
 The list is not complete, I do it just for fun and to learn. **:)**
 
 | Book | Completed |
