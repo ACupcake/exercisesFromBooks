@@ -57,7 +57,7 @@ void reverse(char *s)
 	while(*s2)
 		s2++;
 	s2--;
-	
+
 	for (i = 0, j = strlen(*s)-1; i < j; i++, j--) {
 		c = *s;
 		*s = *s2;
@@ -65,4 +65,39 @@ void reverse(char *s)
 		s++;
 		s2--;
 	}
+}
+
+/* strindex:  return index of t in s, -1 if none */
+int strindex(char *s, char *t)
+{
+	int i, j, k;
+
+	for (i = 0; *s != '\0'; i++) {
+		for (j=i, k=0; *t!='\0' && *s==*t; j++, k++, s++, t++)
+ 			;
+		if (k > 0 && *t == '\0')
+			return i;
+	}
+	return -1;
+}
+
+/* getop:  get next character or numeric operand */
+int getop(char *s)
+{
+	int c;
+	while ((*s = c = getch()) == ' ' || c == '\t')
+	;
+	*++s = '\0';
+	if (!isdigit(c) && c != '.')
+		return c;	  /* not a number */
+	if (isdigit(c))	/* collect integer part */
+		while (isdigit(*++s = c = getch()))
+			;
+	if (c == '.')	  /* collect fraction part */
+		while (isdigit(*++s = c = getch()))
+			;
+	*s = '\0';
+	if (c != EOF)
+		ungetch(c);
+	return NUMBER;
 }
