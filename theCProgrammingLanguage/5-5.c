@@ -2,6 +2,7 @@
 char *strncpy(char *s, char *t, int n) {
 	while((*s++ = *t++) && n-- > 0)
 		;
+	*s = '\0';
 }
 
 /* concatenates at most n characters of t to s*/
@@ -10,6 +11,7 @@ char *strncat(char *s, char *t, int n) {
 		;
 	while((*s++ = *t++) && n-- > 0)
 		;
+	*s = '\0';
 }
 
 /* compares at most n characters of t to s*/
