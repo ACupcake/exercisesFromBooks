@@ -3,4 +3,4 @@ The list is not complete, I do it just for fun and to learn. **:)**
 
 | Book | Completed |
 | ------ | ------ |
-| C Programming Language, 2nd Edition | 37% |
+| C Programming Language, 2nd Edition | 42% |
